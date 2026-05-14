@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière — Your 20s Makeup Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush: #F2C4CE;
+    --blush-deep: #D9879A;
+    --mauve: #C097A8;
+    --rose: #B5637A;
+    --champagne: #F5EDE3;
+    --cream: #FDF8F5;
+    --ivory: #FAF5F0;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --charcoal: #2C2828;
+    --warm-gray: #8A7F7F;
+    --light-mauve: #F0E8EC;
+    --gradient-hero: linear-gradient(135deg, #FDF0F5 0%, #F5EDE3 40%, #EFE8F5 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(253, 248, 245, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(194, 151, 168, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--rose);
+    text-decoration: none;
+  }
+
+  .nav-logo span { font-style: italic; font-weight: 400; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--rose); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--rose);
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(253, 248, 245, 0.97);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    letter-spacing: 0.04em;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover { color: var(--rose); }
+
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--warm-gray);
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--gradient-hero);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 196, 206, 0.3) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
+    bottom: -50px;
+    left: -50px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.02); }
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 720px; }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    border: 1px solid rgba(181, 99, 122, 0.3);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .btn-primary {
+    background: var(--rose);
+    color: white;
+    padding: 0.9rem 2.2rem;
+    border: none;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: #9A4D64;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(181, 99, 122, 0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--rose);
+    padding: 0.9rem 2.2rem;
+    border: 1px solid rgba(181, 99, 122, 0.4);
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--light-mauve);
+    transform: translateY(-2px);
+  }
+
+  /* SCROLL INDICATOR */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--warm-gray);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease 1s both;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--blush-deep));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* SECTIONS */
+  section { position: relative; z-index: 1; }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--rose);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  .section-sub {
+    color: var(--warm-gray);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* SKIN PREP SECTION */
+  .skin-prep {
+    padding: 6rem 3rem;
+    background: var(--ivory);
+  }
+
+  .skin-prep-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .steps-list {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(194, 151, 168, 0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--blush-deep);
+    min-width: 28px;
+    padding-top: 0.1rem;
+    font-style: italic;
+  }
+
+  .step-content h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+    transition: color 0.3s;
+  }
+
+  .step-content p {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    display: none;
+  }
+
+  .step.active .step-content p { display: block; }
+  .step.active .step-content h4 { color: var(--rose); }
+
+  .step-indicator {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blush);
+    transition: all 0.3s;
+  }
+
+  .step.active .step-indicator {
+    background: var(--rose);
+    box-shadow: 0 0 0 4px rgba(181, 99, 122, 0.15);
+  }
+
+  /* VISUAL PANEL */
+  .visual-panel {
+    background: var(--champagne);
+    border-radius: 24px;
+    padding: 2.5rem;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visual-panel::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(242, 196, 206, 0.4);
+  }
+
+  .panel-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel-desc {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .product-tag {
+    display: inline-block;
+    background: white;
+    border: 1px solid rgba(194, 151, 168, 0.3);
+    border-radius: 50px;
+    padding: 0.35rem 1rem;
+    font-size: 0.72rem;
+    color: var(--rose);
+    margin: 0.3rem 0.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ROUTINE TABS */
+  .routine {
+    padding: 6rem 3rem;
+    background: white;
+  }
+
+  .routine-inner { max-width: 1100px; margin: 0 auto; }
+
+  .routine-header { text-align: center; margin-bottom: 3rem; }
+
+  .tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 3rem;
+    background: var(--champagne);
+    border-radius: 50px;
+    padding: 5px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    background: none;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: var(--warm-gray);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+
+  .tab-btn.active {
+    background: var(--rose);
+    color: white;
+  }
+
+  .routine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .routine-card {
+    background: var(--ivory);
+    border-radius: 18px;
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    border: 1px solid rgba(194, 151, 168, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .routine-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 196, 206, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .routine-card:hover::before { opacity: 1; }
+
+  .routine-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(181, 99, 122, 0.25);
+    box-shadow: 0 12px 32px rgba(181, 99, 122, 0.1);
+  }
+
+  .card-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-step {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .card-tip {
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  .card-badge {
+    display: inline-block;
+    background: rgba(242, 196, 206, 0.5);
+    color: var(--rose);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    margin-top: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* PRODUCTS SECTION */
+  .products {
+    padding: 6rem 3rem;
+    background: var(--champagne);
+  }
+
+  .products-inner { max-width: 1100px; margin: 0 auto; }
+
+  .products-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+  }
+
+  .filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-self: center;
+    justify-content: flex-end;
+  }
+
+  .filter-pill {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    border: 1px solid rgba(181, 99, 122, 0.3);
+    background: white;
+    color: var(--warm-gray);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-pill.active {
+    background: var(--rose);
+    color: white;
+    border-color: var(--rose);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(194, 151, 168, 0.12);
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(181, 99, 122, 0.12);
+  }
+
+  .product-img {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-body { padding: 1.4rem; }
+
+  .product-category {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 0.4rem;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .product-brand {
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    margin-bottom: 0.8rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--rose);
+    margin-bottom: 0.8rem;
+  }
+
+  .product-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  .product-desc {
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(194, 151, 168, 0.1);
+  }
+
+  /* TIPS SECTION */
+  .tips {
+    padding: 6rem 3rem;
+    background: var(--ivory);
+  }
+
+  .tips-inner { max-width: 1100px; margin: 0 auto; }
+
+  .tips-header { text-align: center; margin-bottom: 3.5rem; }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tip-card {
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(194, 151, 168, 0.15);
+    background: white;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .tip-card:hover {
+    border-color: rgba(181, 99, 122, 0.3);
+    box-shadow: 0 8px 30px rgba(181, 99, 122, 0.08);
+  }
+
+  .tip-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: var(--light-mauve);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .tip-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.7rem;
+  }
+
+  .tip-text {
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+  }
+
+  /* SKIN TONE SECTION */
+  .skin-tone {
+    padding: 6rem 3rem;
+    background: white;
+  }
+
+  .skin-tone-inner { max-width: 1100px; margin: 0 auto; }
+
+  .skin-tone-header { text-align: center; margin-bottom: 3rem; }
+
+  .tones-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .tone-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background: var(--ivory);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--warm-gray);
+  }
+
+  .tone-btn.active {
+    border-color: var(--rose);
+    background: white;
+    color: var(--charcoal);
+  }
+
+  .tone-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  }
+
+  .tone-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .tone-content.active { display: block; }
+
+  .tone-recs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tone-rec {
+    background: var(--ivory);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(194, 151, 168, 0.1);
+  }
+
+  .tone-rec-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blush-deep);
+    margin-bottom: 0.6rem;
+  }
+
+  .tone-rec-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.4rem;
+  }
+
+  .tone-rec-sub {
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  .color-swatches {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+
+  .swatch:hover { transform: scale(1.2); }
+
+  /* QUIZ SECTION */
+  .quiz {
+    padding: 6rem 3rem;
+    background: linear-gradient(135deg, #FDF0F5 0%, #F5EDE3 60%, #F0EAF5 100%);
+  }
+
+  .quiz-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .quiz-card {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem;
+    border: 1px solid rgba(194, 151, 168, 0.15);
+    margin-top: 2.5rem;
+    box-shadow: 0 8px 40px rgba(181, 99, 122, 0.06);
+  }
+
+  .quiz-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quiz-opt {
+    padding: 1rem;
+    border: 1.5px solid rgba(194, 151, 168, 0.2);
+    border-radius: 12px;
+    background: var(--ivory);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--charcoal);
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .quiz-opt:hover {
+    border-color: var(--rose);
+    background: var(--light-mauve);
+  }
+
+  .quiz-opt.selected {
+    border-color: var(--rose);
+    background: rgba(181, 99, 122, 0.08);
+    color: var(--rose);
+  }
+
+  .quiz-opt-icon { display: block; font-size: 1.2rem; margin-bottom: 0.3rem; }
+
+  .quiz-progress {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .quiz-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(181, 99, 122, 0.2);
+    transition: all 0.3s;
+  }
+
+  .quiz-dot.active { background: var(--rose); width: 18px; border-radius: 3px; }
+  .quiz-dot.done { background: rgba(181, 99, 122, 0.5); }
+
+  .quiz-result {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .quiz-result.show { display: block; }
+
+  .result-type {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--rose);
+    font-style: italic;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .result-desc {
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .result-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 4rem 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--blush);
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    opacity: 0.5;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--blush); }
+
+  .footer-divider {
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem auto;
+  }
+
+  .footer-copy { font-size: 0.72rem; opacity: 0.35; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .hero { padding: 5rem 1.5rem 4rem; }
+    
+    .skin-prep { padding: 4rem 1.5rem; }
+    .skin-prep-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+    .routine { padding: 4rem 1.5rem; }
+    
+    .products { padding: 4rem 1.5rem; }
+    .products-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .filter-pills { justify-content: flex-start; }
+
+    .tips { padding: 4rem 1.5rem; }
+    
+    .skin-tone { padding: 4rem 1.5rem; }
+    
+    .quiz { padding: 4rem 1.5rem; }
+    .quiz-card { padding: 2rem 1.5rem; }
+    .quiz-options { grid-template-columns: 1fr; }
+
+    footer { padding: 3rem 1.5rem 2rem; }
+
+    .tab-nav { max-width: 100%; }
+    .section-sub { font-size: 0.88rem; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.8rem; }
+    .routine-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* TOOLTIP */
+  .tooltip {
+    position: relative;
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    background: var(--charcoal);
+    color: white;
+    font-size: 0.72rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* PRODUCTS HIDDEN */
+  .product-card[data-cat] { transition: all 0.4s ease; }
+  .product-card.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Lumi<span>ère</span></a>
+  <ul class="nav-links">
+    <li><a href="#skin-prep">Skin Prep</a></li>
+    <li><a href="#routine">Routine</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="#skin-tone">Skin Tone</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">×</button>
+  <a href="#skin-prep" class="mobile-link">Skin Prep</a>
+  <a href="#routine" class="mobile-link">Routine</a>
+  <a href="#products" class="mobile-link">Products</a>
+  <a href="#tips" class="mobile-link">Tips</a>
+  <a href="#skin-tone" class="mobile-link">Skin Tone</a>
+  <a href="#quiz" class="mobile-link">Quiz</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">✦ The Complete Beauty Guide</span>
+    <h1>Your glow-up<br>starts <em>here</em></h1>
+    <p>A complete makeup guide curated for women in their 20s — from skincare prep to full glam. Discover routines, products, and pro tips tailored just for you.</p>
+    <div class="hero-cta">
+      <a href="#routine" class="btn-primary">Explore Routines</a>
+      <a href="#quiz" class="btn-outline">Take the Quiz</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SKIN PREP -->
+<section class="skin-prep" id="skin-prep">
+  <div class="skin-prep-inner">
+    <div class="reveal">
+      <div class="section-label">Step 01</div>
+      <h2 class="section-title">Skin Prep —<br>the <em>real</em> foundation</h2>
+      <p class="section-sub">Great makeup starts before the first product touches your face. Your skincare routine is the canvas everything else builds on.</p>
+      <div class="steps-list">
+        <div class="step active" onclick="toggleStep(this)">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h4>Double Cleanse</h4>
+            <p>Start with an oil-based cleanser to dissolve sunscreen & makeup, followed by a water-based cleanser. This two-step method ensures your skin is truly clean without stripping its natural barrier. Try the DHC Deep Cleansing Oil + CeraVe Hydrating Cleanser combo.</p>
+          </div>
+          <div class="step-indicator"></div>
+        </div>
+        <div class="step" onclick="toggleStep(this)">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h4>Exfoliate (2–3x/week)</h4>
+            <p>Chemical exfoliants like AHAs (glycolic, lactic acid) smooth texture and brighten. BHAs (salicylic acid) clear pores. Never scrub dry skin — exfoliate after cleansing on damp skin. The Paula's Choice 2% BHA is a cult favourite for 20s skin.</p>
+          </div>
+          <div class="step-indicator"></div>
+        </div>
+        <div class="step" onclick="toggleStep(this)">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h4>Hydrating Toner / Essence</h4>
+            <p>Pat (don't rub) a hydrating toner into skin to prep for serum absorption. Look for ingredients like hyaluronic acid, niacinamide, and centella asiatica. The COSRX Advanced Snail 96 Mucin Power Essence is a bestseller for plumped, dewy skin.</p>
+          </div>
+          <div class="step-indicator"></div>
+        </div>
+        <div class="step" onclick="toggleStep(this)">
+          <span class="step-num">04</span>
+          <div class="step-content">
+            <h4>Vitamin C Serum (AM)</h4>
+            <p>In your 20s, start using Vitamin C every morning. It protects from free radical damage, fades pigmentation, and creates an inner glow that makeup can't replicate. Skinceuticals CE Ferulic is the gold standard; The Ordinary Vitamin C Suspension is budget-friendly.</p>
+          </div>
+          <div class="step-indicator"></div>
+        </div>
+        <div class="step" onclick="toggleStep(this)">
+          <span class="step-num">05</span>
+          <div class="step-content">
+            <h4>Moisturize + SPF 50</h4>
+            <p>Seal everything in with a moisturizer suited to your skin type, then apply SPF 50+ as the last skincare step. This is non-negotiable in your 20s — it's the single best anti-ageing investment you can make. Try the Supergoop Unseen Sunscreen SPF 40 as a makeup primer too.</p>
+          </div>
+          <div class="step-indicator"></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" id="prepPanel">
+      <div class="visual-panel">
+        <span class="panel-icon">✨</span>
+        <div class="panel-title" id="panelTitle">Double Cleanse</div>
+        <p class="panel-desc" id="panelDesc">The foundation of all good skin. An oil cleanser lifts debris; the water cleanser purifies. Never skip this step before applying makeup.</p>
+        <div id="panelTags">
+          <span class="product-tag">DHC Deep Cleansing Oil</span>
+          <span class="product-tag">CeraVe Hydrating Cleanser</span>
+          <span class="product-tag">Banila Co Clean It Zero</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTINE -->
+<section class="routine" id="routine">
+  <div class="routine-inner">
+    <div class="routine-header reveal">
+      <div class="section-label" style="justify-content: center;">Step 02</div>
+      <h2 class="section-title">Your Daily <em>Routine</em></h2>
+      <p class="section-sub" style="margin: 0 auto;">Whether you have 5 minutes or 45, there's a routine for every day and mood.</p>
+    </div>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('no-makeup')">No-Makeup</button>
+      <button class="tab-btn" onclick="switchTab('everyday')">Everyday</button>
+      <button class="tab-btn" onclick="switchTab('glam')">Full Glam</button>
+    </div>
+
+    <!-- No Makeup -->
+    <div id="tab-no-makeup" class="routine-grid">
+      <div class="routine-card">
+        <span class="card-emoji">🧴</span>
+        <div class="card-step">Step 1</div>
+        <div class="card-name">Tinted Moisturizer</div>
+        <div class="card-tip">Sheer coverage + skincare in one. Evens tone while letting skin breathe. Laura Mercier or Maybelline Fit Me.</div>
+        <span class="card-badge">5 mins total</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">✏️</span>
+        <div class="card-step">Step 2</div>
+        <div class="card-name">Brow Pencil</div>
+        <div class="card-tip">Frame your face with natural, hair-like strokes. Anastasia Beverly Hills Micro Brow Pencil is iconic.</div>
+        <span class="card-badge">Game changer</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🌸</span>
+        <div class="card-step">Step 3</div>
+        <div class="card-name">Cream Blush</div>
+        <div class="card-tip">Dab on cheeks, blend with fingers for a flushed, "just came in from the cold" look. NARS Orgasm is a classic.</div>
+        <span class="card-badge">Effortless glow</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">✨</span>
+        <div class="card-step">Step 4</div>
+        <div class="card-name">Highlighter Stick</div>
+        <div class="card-tip">Swipe on the bridge of the nose, cupid's bow, and inner corners. Charlotte Tilbury Hollywood Flawless Filter.</div>
+        <span class="card-badge">Dewy skin</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">💄</span>
+        <div class="card-step">Step 5</div>
+        <div class="card-name">Tinted Lip Balm</div>
+        <div class="card-tip">A hint of color, plumped lips, and hydration all in one. Summer Fridays Lip Butter Balm is a cult favourite.</div>
+        <span class="card-badge">No-fuss beauty</span>
+      </div>
+    </div>
+
+    <!-- Everyday -->
+    <div id="tab-everyday" class="routine-grid" style="display:none">
+      <div class="routine-card">
+        <span class="card-emoji">🎨</span>
+        <div class="card-step">Step 1</div>
+        <div class="card-name">Primer</div>
+        <div class="card-tip">Blur pores, extend makeup wear, and create a smooth base. Smashbox Photo Finish or Benefit Porefessional.</div>
+        <span class="card-badge">Essential</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">💧</span>
+        <div class="card-step">Step 2</div>
+        <div class="card-name">Foundation</div>
+        <div class="card-tip">Light-to-medium coverage with a buildable formula. Fenty Beauty Pro Filt'r Soft Matte or NARS Sheer Glow.</div>
+        <span class="card-badge">Medium coverage</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🪄</span>
+        <div class="card-step">Step 3</div>
+        <div class="card-name">Concealer</div>
+        <div class="card-tip">Under-eye brightening and spot correcting. Tarte Shape Tape or Maybelline Age Rewind. Set with loose powder.</div>
+        <span class="card-badge">Brightening</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🌷</span>
+        <div class="card-step">Step 4</div>
+        <div class="card-name">Blush + Bronzer</div>
+        <div class="card-tip">Apply bronzer in the 3 shape, blush on the apples. Try Too Faced Chocolate Soleil + Benefit Dandelion blush.</div>
+        <span class="card-badge">Dimension</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">👁️</span>
+        <div class="card-step">Step 5</div>
+        <div class="card-name">Mascara</div>
+        <div class="card-tip">Two coats, wiggle at the roots for volume. Charlotte Tilbury Pillow Talk Mascara opens and lifts the eye.</div>
+        <span class="card-badge">Eye-opening</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">💋</span>
+        <div class="card-step">Step 6</div>
+        <div class="card-name">Lip Liner + Gloss</div>
+        <div class="card-tip">Line just outside your natural lip line, fill in, then top with a clear gloss. Kylie Jenner technique approved.</div>
+        <span class="card-badge">Plump pout</span>
+      </div>
+    </div>
+
+    <!-- Full Glam -->
+    <div id="tab-glam" class="routine-grid" style="display:none">
+      <div class="routine-card">
+        <span class="card-emoji">🏆</span>
+        <div class="card-step">Step 1</div>
+        <div class="card-name">Full-Coverage Foundation</div>
+        <div class="card-tip">Apply with a damp beauty blender in a stippling motion. Giorgio Armani Luminous Silk or Estée Lauder Double Wear.</div>
+        <span class="card-badge">Full coverage</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🔺</span>
+        <div class="card-step">Step 2</div>
+        <div class="card-name">Contour & Sculpt</div>
+        <div class="card-tip">Use a cool-toned matte powder 2 shades darker. Hollow cheekbones, temples, jawline, nose. Anastasia Contour Kit.</div>
+        <span class="card-badge">Sculpted</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🌟</span>
+        <div class="card-step">Step 3</div>
+        <div class="card-name">Strobe Highlight</div>
+        <div class="card-tip">Becca Shimmering Skin Perfector on cheekbones, nose tip, cupid's bow. Build for intensity. Less is more initially.</div>
+        <span class="card-badge">Blinding glow</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🎭</span>
+        <div class="card-step">Step 4</div>
+        <div class="card-name">Eyeshadow</div>
+        <div class="card-tip">Transition shade, lid color, crease blend, lower lash line. Natasha Denona or Urban Decay Naked palettes.</div>
+        <span class="card-badge">Dramatic eyes</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🖊️</span>
+        <div class="card-step">Step 5</div>
+        <div class="card-name">Graphic Liner</div>
+        <div class="card-tip">Classic wing or cut crease. Stila Stay All Day or NYX Epic Ink Liner for precision. Practice makes perfect.</div>
+        <span class="card-badge">Precision</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🌹</span>
+        <div class="card-step">Step 6</div>
+        <div class="card-name">Bold Lip</div>
+        <div class="card-tip">Overline with liner, fill, blot, apply again for longevity. MAC Ruby Woo or Charlotte Tilbury Pillow Talk.</div>
+        <span class="card-badge">Statement</span>
+      </div>
+      <div class="routine-card">
+        <span class="card-emoji">🔒</span>
+        <div class="card-step">Step 7</div>
+        <div class="card-name">Setting Spray</div>
+        <div class="card-tip">Lock everything in place. Urban Decay All Nighter or MAC Fix+. Hold 8 inches away, mist in an X then O motion.</div>
+        <span class="card-badge">All-day hold</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-inner">
+    <div class="products-header reveal">
+      <div>
+        <div class="section-label">Step 03</div>
+        <h2 class="section-title">Top <em>Products</em><br>to Know</h2>
+      </div>
+      <div class="filter-pills">
+        <button class="filter-pill active" onclick="filterProducts('all', this)">All</button>
+        <button class="filter-pill" onclick="filterProducts('base', this)">Base</button>
+        <button class="filter-pill" onclick="filterProducts('eye', this)">Eyes</button>
+        <button class="filter-pill" onclick="filterProducts('lip', this)">Lips</button>
+        <button class="filter-pill" onclick="filterProducts('skin', this)">Skincare</button>
+      </div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal" data-cat="base">
+        <div class="product-img" style="background: linear-gradient(135deg, #F5EDE3, #E8D5B0);">💄</div>
+        <div class="product-body">
+          <div class="product-category">Foundation</div>
+          <div class="product-name">Luminous Silk Foundation</div>
+          <div class="product-brand">Giorgio Armani Beauty</div>
+          <div class="product-price">₹6,500 · $68</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-desc">The Holy Grail. Satin-smooth finish with medium-buildable coverage. 40 shades. Beloved by makeup artists worldwide.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="base">
+        <div class="product-img" style="background: linear-gradient(135deg, #F0E8EC, #D9879A, #C097A8);">🎨</div>
+        <div class="product-body">
+          <div class="product-category">Concealer</div>
+          <div class="product-name">Shape Tape Concealer</div>
+          <div class="product-brand">Tarte Cosmetics</div>
+          <div class="product-price">₹2,800 · $30</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-desc">Full-coverage, crease-proof formula. Brightens under-eyes and corrects imperfections. Long-lasting, 35+ shades.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="eye">
+        <div class="product-img" style="background: linear-gradient(135deg, #2C2828, #4A3F3F);">👁️</div>
+        <div class="product-body">
+          <div class="product-category">Mascara</div>
+          <div class="product-name">Lash Sensational Sky High</div>
+          <div class="product-brand">Maybelline New York</div>
+          <div class="product-price">₹899 · $10</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-desc">Flexible brush reaches every lash. Lengthening, volumizing formula. Best budget mascara — period.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="lip">
+        <div class="product-img" style="background: linear-gradient(135deg, #FBEAF0, #ED93B1);">💋</div>
+        <div class="product-body">
+          <div class="product-category">Lip Balm</div>
+          <div class="product-name">Lip Butter Balm</div>
+          <div class="product-brand">Summer Fridays</div>
+          <div class="product-price">₹2,200 · $24</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-desc">Ultra-hydrating tinted balm. Works as a gloss, treatment, and color. Vacation Raspberry shade is iconic.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="skin">
+        <div class="product-img" style="background: linear-gradient(135deg, #E6F1FB, #85B7EB);">🧴</div>
+        <div class="product-body">
+          <div class="product-category">Sunscreen</div>
+          <div class="product-name">Unseen Sunscreen SPF 40</div>
+          <div class="product-brand">Supergoop!</div>
+          <div class="product-price">₹3,200 · $38</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-desc">Gel formula, zero white cast, doubles as primer. The only SPF that makeup artists actually love. A must in your 20s.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="base">
+        <div class="product-img" style="background: linear-gradient(135deg, #F5EDE3, #C9A96E);">✨</div>
+        <div class="product-body">
+          <div class="product-category">Highlighter</div>
+          <div class="product-name">Hollywood Flawless Filter</div>
+          <div class="product-brand">Charlotte Tilbury</div>
+          <div class="product-price">₹4,200 · $49</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-desc">Illuminating complexion booster. Wearable under or over foundation for a lit-from-within glow. All 8 shades are divine.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="eye">
+        <div class="product-img" style="background: linear-gradient(135deg, #4A1528, #993556);">🎭</div>
+        <div class="product-body">
+          <div class="product-category">Eyeshadow Palette</div>
+          <div class="product-name">Naked3 Palette</div>
+          <div class="product-brand">Urban Decay</div>
+          <div class="product-price">₹4,800 · $54</div>
+          <div class="product-stars">★★★★☆</div>
+          <div class="product-desc">12 rosy neutrals ranging from shimmery pink to deep plum. Perfect for everyday to night looks. Highly blendable.</div>
+        </div>
+      </div>
+      <div class="product-card reveal" data-cat="skin">
+        <div class="product-img" style="background: linear-gradient(135deg, #E1F5EE, #5DCAA5);">💧</div>
+        <div class="product-body">
+          <div class="product-category">Serum</div>
+          <div class="product-name">Niacinamide 10% + Zinc 1%</div>
+          <div class="product-brand">The Ordinary</div>
+          <div class="product-price">₹650 · $7</div>
+          <div class="product-stars">★★★★☆</div>
+          <div class="product-desc">Reduces blemishes, controls oil, minimizes pores. The best-value skincare product for acne-prone 20s skin.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips" id="tips">
+  <div class="tips-inner">
+    <div class="tips-header reveal">
+      <div class="section-label" style="justify-content: center;">Pro Secrets</div>
+      <h2 class="section-title">Tips Every 20-Something<br><em>Needs to Know</em></h2>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card reveal">
+        <div class="tip-icon">🌊</div>
+        <div class="tip-title">Damp Beauty Blender Always</div>
+        <div class="tip-text">Wet your beauty blender until it swells, then squeeze out the water. A damp blender blends foundation seamlessly and prevents it from absorbing into the sponge. Dry blenders absorb half your product.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">🔄</div>
+        <div class="tip-title">Color Correct Before Concealing</div>
+        <div class="tip-text">For dark under-eye circles, use a peach or orange corrector first (darker skin tones need deeper orange). This cancels purple tones so your concealer doesn't have to work as hard — the result looks more natural and lasts longer.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">❄️</div>
+        <div class="tip-title">Bake Your Concealer</div>
+        <div class="tip-text">Apply loose powder over concealer generously, let it sit for 5–10 minutes while you do your eye makeup, then dust away. This technique sets concealer flawlessly and prevents creasing all day.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">✂️</div>
+        <div class="tip-title">Mascara Hack: Use a Spoolie</div>
+        <div class="tip-text">Before mascara dries, comb through lashes with a clean spoolie to separate clumps. This gives that "individual lash" look that tubing mascaras try to replicate.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">💡</div>
+        <div class="tip-title">Eyeshadow First, Then Foundation</div>
+        <div class="tip-text">Do your eye look first. Any fallout can be easily wiped off. Then apply your base. This is a makeup artist trick that saves you from ruining a perfect base with powdery fallout.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">🌡️</div>
+        <div class="tip-title">Cream Before Powder Always</div>
+        <div class="tip-text">Layer cream products together, set with powder, then add powder products on top. Cream over powder looks cakey and doesn't blend. Cream blush under powder bronzer = flawless every time.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">💄</div>
+        <div class="tip-title">Liner to Correct Lipstick Mistakes</div>
+        <div class="tip-text">Use a concealer or nude lip liner around the edges of your lips to clean up any mistakes and sharpen your lip line. This also stops feathering with dark lipsticks — a pro trick from every backstage.</div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-icon">🕰️</div>
+        <div class="tip-title">Start Retinol in Your Mid-20s</div>
+        <div class="tip-text">It's never too early to start. Low-strength retinol (0.025–0.05%) used 2x/week at night boosts collagen, speeds cell turnover, and prevents the fine lines that show up in your 30s. Always use SPF the next day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKIN TONE GUIDE -->
+<section class="skin-tone" id="skin-tone">
+  <div class="skin-tone-inner">
+    <div class="skin-tone-header reveal">
+      <div class="section-label" style="justify-content: center;">Personalized</div>
+      <h2 class="section-title">Shades for Your <em>Skin Tone</em></h2>
+      <p class="section-sub" style="margin: 0.8rem auto 0;">Every skin tone is beautiful. Here's how to find the colors that will make yours glow.</p>
+    </div>
+    <div class="tones-nav reveal">
+      <button class="tone-btn active" onclick="switchTone('fair')">
+        <div class="tone-dot" style="background: #F5DCCE;"></div> Fair
+      </button>
+      <button class="tone-btn" onclick="switchTone('light')">
+        <div class="tone-dot" style="background: #E5C5A0;"></div> Light
+      </button>
+      <button class="tone-btn" onclick="switchTone('medium')">
+        <div class="tone-dot" style="background: #C98F6A;"></div> Medium
+      </button>
+      <button class="tone-btn" onclick="switchTone('tan')">
+        <div class="tone-dot" style="background: #9C6845;"></div> Tan
+      </button>
+      <button class="tone-btn" onclick="switchTone('deep')">
+        <div class="tone-dot" style="background: #5C3520;"></div> Deep
+      </button>
+    </div>
+
+    <!-- FAIR -->
+    <div id="tone-fair" class="tone-content active reveal">
+      <div class="tone-recs">
+        <div class="tone-rec">
+          <div class="tone-rec-label">Foundation Shade</div>
+          <div class="tone-rec-value">Porcelain / Ivory</div>
+          <div class="tone-rec-sub">Look for N10–N20 shades. Fenty Beauty 100N, MAC NC10, or Rare Beauty 100N are popular picks.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Blush Colors</div>
+          <div class="tone-rec-value">Baby Pink, Peach, Coral</div>
+          <div class="tone-rec-sub">Avoid anything too deep. NARS Orgasm or Rare Beauty Soft Pinch in Joy are perfect.</div>
+          <div class="color-swatches">
+            <div class="swatch tooltip" style="background: #FFB8C5;"><span class="tooltip-text">Baby Pink</span></div>
+            <div class="swatch tooltip" style="background: #FFAD85;"><span class="tooltip-text">Peach</span></div>
+            <div class="swatch tooltip" style="background: #FF7F7F;"><span class="tooltip-text">Coral</span></div>
+            <div class="swatch tooltip" style="background: #FFD1B8;"><span class="tooltip-text">Apricot</span></div>
+          </div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Lip Colors</div>
+          <div class="tone-rec-value">Rosy Nudes, Soft Pinks</div>
+          <div class="tone-rec-sub">MAC Velvet Teddy, Charlotte Tilbury Pillow Talk, or NARS Dolce Vita flatter fair skin beautifully.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Bronzer Tip</div>
+          <div class="tone-rec-value">Go Only 1–2 Shades Deeper</div>
+          <div class="tone-rec-sub">Fair skin can look muddy with too-dark bronzers. Benefit Hoola Lite or Too Faced Milk Chocolate.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHT -->
+    <div id="tone-light" class="tone-content reveal">
+      <div class="tone-recs">
+        <div class="tone-rec">
+          <div class="tone-rec-label">Foundation Shade</div>
+          <div class="tone-rec-value">Sand / Beige</div>
+          <div class="tone-rec-sub">Warm or neutral undertones. Fenty Beauty 210N/W, MAC NC15–20, Maybelline 110–120 Fit Me.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Blush Colors</div>
+          <div class="tone-rec-value">Warm Peach, Dusty Rose</div>
+          <div class="tone-rec-sub">Slightly richer shades work beautifully. Try Charlotte Tilbury Pillow Talk blush or e.l.f. Putty Blush in Princess.</div>
+          <div class="color-swatches">
+            <div class="swatch tooltip" style="background: #F4A080;"><span class="tooltip-text">Warm Peach</span></div>
+            <div class="swatch tooltip" style="background: #D4879A;"><span class="tooltip-text">Dusty Rose</span></div>
+            <div class="swatch tooltip" style="background: #E8967A;"><span class="tooltip-text">Terracotta</span></div>
+            <div class="swatch tooltip" style="background: #C87E8A;"><span class="tooltip-text">Mauve Pink</span></div>
+          </div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Lip Colors</div>
+          <div class="tone-rec-value">Warm Nudes, Berry Pinks</div>
+          <div class="tone-rec-sub">Try MAC Whirl, NARS Banned Red, or Charlotte Tilbury Pillow Talk Medium.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Eye Shadow Tip</div>
+          <div class="tone-rec-value">Warm Mauve & Terracottas</div>
+          <div class="tone-rec-sub">Urban Decay Naked 3 palette or Morphe 35O are perfect warm palettes for light skin tones.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIUM -->
+    <div id="tone-medium" class="tone-content reveal">
+      <div class="tone-recs">
+        <div class="tone-rec">
+          <div class="tone-rec-label">Foundation Shade</div>
+          <div class="tone-rec-value">Golden Beige / Caramel</div>
+          <div class="tone-rec-sub">Often warm or golden undertones. Fenty Beauty 330W, MAC NC35, Estée Lauder Double Wear 3W2.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Blush Colors</div>
+          <div class="tone-rec-value">Coral, Burnt Orange, Berry</div>
+          <div class="tone-rec-sub">Bolder colors read beautifully. NARS Orgasm, Fenty Cheeks Out in Fuego, or Rare Beauty in Bliss.</div>
+          <div class="color-swatches">
+            <div class="swatch tooltip" style="background: #E8603C;"><span class="tooltip-text">Burnt Orange</span></div>
+            <div class="swatch tooltip" style="background: #C84B6E;"><span class="tooltip-text">Berry</span></div>
+            <div class="swatch tooltip" style="background: #E07050;"><span class="tooltip-text">Coral</span></div>
+            <div class="swatch tooltip" style="background: #A8446A;"><span class="tooltip-text">Deep Rose</span></div>
+          </div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Lip Colors</div>
+          <div class="tone-rec-value">Warm Reds, Terracottas, Nudes</div>
+          <div class="tone-rec-sub">Try MAC Runway Hit, NARS Dragon Girl, or Fenty Stunna Lip Paint in Uncuffed (warm brown-red).</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Highlighter Tip</div>
+          <div class="tone-rec-value">Gold & Bronze Glows</div>
+          <div class="tone-rec-sub">Skip cool-toned highlighters. Becca Shimmering Skin Perfector in Champagne Pop or Topaz is stunning.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAN -->
+    <div id="tone-tan" class="tone-content reveal">
+      <div class="tone-recs">
+        <div class="tone-rec">
+          <div class="tone-rec-label">Foundation Shade</div>
+          <div class="tone-rec-value">Hazel / Amber</div>
+          <div class="tone-rec-sub">Watch for warm/neutral. Fenty Beauty 360W, MAC NC45, or L'Oréal True Match W7 work beautifully.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Blush Colors</div>
+          <div class="tone-rec-value">Deep Coral, Brick Red, Fuchsia</div>
+          <div class="tone-rec-sub">Rich pigmented shades show up best. Try Fenty Cheeks Out in Fuego or Rare Beauty in Happy.</div>
+          <div class="color-swatches">
+            <div class="swatch tooltip" style="background: #BF3A5E;"><span class="tooltip-text">Deep Fuchsia</span></div>
+            <div class="swatch tooltip" style="background: #C0401A;"><span class="tooltip-text">Brick Red</span></div>
+            <div class="swatch tooltip" style="background: #9E3060;"><span class="tooltip-text">Deep Berry</span></div>
+            <div class="swatch tooltip" style="background: #D9583E;"><span class="tooltip-text">Spice</span></div>
+          </div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Lip Colors</div>
+          <div class="tone-rec-value">Deep Berry, Brick, Brown-Red</div>
+          <div class="tone-rec-sub">Try Fenty Stunna Lip Paint Uncuffed, MAC Diva, or Charlotte Tilbury In Love with Olivia.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Eye Shadow Tip</div>
+          <div class="tone-rec-value">Rich Golds, Copper, Burgundy</div>
+          <div class="tone-rec-sub">Anastasia Beverly Hills Riviera palette or Pat McGrath Mothership I are dream palettes for tan skin.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEEP -->
+    <div id="tone-deep" class="tone-content reveal">
+      <div class="tone-recs">
+        <div class="tone-rec">
+          <div class="tone-rec-label">Foundation Shade</div>
+          <div class="tone-rec-value">Espresso / Mahogany</div>
+          <div class="tone-rec-sub">Fenty Beauty 490N or 498W, MAC NW55–58, or Maybelline Fit Me 380–385. Look for orange/red undertones.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Blush Colors</div>
+          <div class="tone-rec-value">Bright Berry, Wine, Orange</div>
+          <div class="tone-rec-sub">Deep skin glows in rich jewel tones. Try NARS Amour, Fenty Cheeks Out in Plum Farie, or MAC Dollymix.</div>
+          <div class="color-swatches">
+            <div class="swatch tooltip" style="background: #7B1546;"><span class="tooltip-text">Wine Berry</span></div>
+            <div class="swatch tooltip" style="background: #B04020;"><span class="tooltip-text">Deep Orange</span></div>
+            <div class="swatch tooltip" style="background: #8B2060;"><span class="tooltip-text">Plum</span></div>
+            <div class="swatch tooltip" style="background: #A01030;"><span class="tooltip-text">Deep Red</span></div>
+          </div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Best Lip Colors</div>
+          <div class="tone-rec-value">Vibrant Reds, Plums, Merlot</div>
+          <div class="tone-rec-sub">MAC Ruby Woo, Fenty Stunna Lip Paint in Uninvited or Futuristic, Dior 999 are iconic on deep skin.</div>
+        </div>
+        <div class="tone-rec">
+          <div class="tone-rec-label">Highlighter Tip</div>
+          <div class="tone-rec-value">Deep Gold & Rich Copper</div>
+          <div class="tone-rec-sub">Fenty Body Lava, Becca Shimmering Skin Perfector in Sunlit Bronze, or Pat McGrath Bronze. Avoid silver.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz" id="quiz">
+  <div class="quiz-inner">
+    <div class="reveal">
+      <div class="section-label" style="justify-content: center;">Personalized</div>
+      <h2 class="section-title" style="text-align: center;">Find Your<br><em>Makeup Style</em></h2>
+      <p class="section-sub" style="text-align: center; margin: 0 auto;">Answer 4 quick questions to discover the routine and products made for you.</p>
+    </div>
+    <div class="quiz-card reveal">
+      <div id="quizForm">
+        <div class="quiz-progress">
+          <div class="quiz-dot active" id="dot0"></div>
+          <div class="quiz-dot" id="dot1"></div>
+          <div class="quiz-dot" id="dot2"></div>
+          <div class="quiz-dot" id="dot3"></div>
+        </div>
+        <div class="quiz-q" id="quizQ">What does your morning look like?</div>
+        <div class="quiz-options" id="quizOpts">
+          <div class="quiz-opt" onclick="selectOpt(this, 0)"><span class="quiz-opt-icon">⏰</span>5 minutes max</div>
+          <div class="quiz-opt" onclick="selectOpt(this, 1)"><span class="quiz-opt-icon">☕</span>15–20 minutes</div>
+          <div class="quiz-opt" onclick="selectOpt(this, 2)"><span class="quiz-opt-icon">🌅</span>30–45 minutes</div>
+          <div class="quiz-opt" onclick="selectOpt(this, 3)"><span class="quiz-opt-icon">✨</span>As long as it takes</div>
+        </div>
+        <button class="btn-primary" onclick="nextQ()" id="nextBtn" style="display:none; margin: 0 auto;">Next →</button>
+      </div>
+      <div class="quiz-result" id="quizResult">
+        <div style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blush-deep);">Your Makeup Personality</div>
+        <div class="result-type" id="resultType">The Effortless Girl</div>
+        <div class="result-desc" id="resultDesc">You believe in enhancing, not hiding. Your ideal look is dewy, natural, and done in minutes — but always looks intentional. You're the girl who gets stopped and asked "are you wearing makeup?" (you are, but brilliantly).</div>
+        <div class="result-items" id="resultItems"></div>
+        <button class="btn-outline" onclick="resetQuiz()" style="margin-top: 1.5rem; display: inline-block;">Retake Quiz</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Lumi<em style="font-style:italic;">ère</em></div>
+  <div class="footer-tagline">Beauty, simplified for the modern woman</div>
+  <ul class="footer-links">
+    <li><a href="#skin-prep">Skin Prep</a></li>
+    <li><a href="#routine">Routines</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#tips">Pro Tips</a></li>
+    <li><a href="#skin-tone">Skin Tones</a></li>
+    <li><a href="#quiz">Quiz</a></li>
+  </ul>
+  <div class="footer-divider"></div>
+  <div class="footer-copy">© 2025 Lumière Makeup Guide · Made with love for women in their 20s ✦</div>
+</footer>
+
+<script>
+  // MOBILE MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+
+  hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // SCROLL REVEAL
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), 
+          Array.from(revealEls).indexOf(e.target) % 4 * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // SKIN PREP STEPS
+  const stepData = [
+    { icon: '✨', title: 'Double Cleanse', desc: 'Start with oil cleansing to dissolve SPF and makeup residue, then water-based cleanser for a deep clean. Never skip this step before makeup.', tags: ['DHC Deep Cleansing Oil', 'CeraVe Hydrating Cleanser', 'Banila Co Clean It Zero'] },
+    { icon: '🌿', title: 'Exfoliate', desc: 'AHAs brighten and smooth. BHAs clear pores. Exfoliating 2–3x per week removes dead skin that causes makeup to look patchy.', tags: ["Paula's Choice 2% BHA", 'The Ordinary AHA 30%', 'Glow Recipe Watermelon Toner'] },
+    { icon: '💧', title: 'Hydrating Toner', desc: 'Prep skin to absorb serums better. Hyaluronic acid toners add plumpness that gives makeup a smooth, dewy canvas.', tags: ['COSRX Snail 96 Essence', 'Laneige Cream Skin Refiner', 'SK-II Facial Treatment Essence'] },
+    { icon: '🌞', title: 'Vitamin C Serum', desc: 'Your 20s secret weapon. Daily Vitamin C protects skin from pollution damage, fades spots, and creates a glow nothing else can replicate.', tags: ['Skinceuticals CE Ferulic', 'The Ordinary Vitamin C', 'Drunk Elephant C-Firma'] },
+    { icon: '🛡️', title: 'Moisturize + SPF', desc: 'Seal in all the goodness. SPF 50 is the best anti-ageing investment you can make in your 20s — bar none.', tags: ['Supergoop Unseen SPF 40', 'La Roche-Posay SPF 50', 'Cerave AM Moisturizer SPF 30'] },
+  ];
+
+  function toggleStep(el) {
+    const steps = document.querySelectorAll('.step');
+    const idx = Array.from(steps).indexOf(el);
+    steps.forEach((s, i) => {
+      s.classList.toggle('active', i === idx);
+    });
+    const data = stepData[idx];
+    document.getElementById('panelTitle').textContent = data.title;
+    document.getElementById('panelDesc').textContent = data.desc;
+    document.querySelector('.panel-icon').textContent = data.icon;
+    const tagContainer = document.getElementById('panelTags');
+    tagContainer.innerHTML = data.tags.map(t => `<span class="product-tag">${t}</span>`).join('');
+  }
+
+  // TAB SWITCHING
+  function switchTab(tab) {
+    ['no-makeup', 'everyday', 'glam'].forEach(t => {
+      document.getElementById('tab-' + t).style.display = t === tab ? 'grid' : 'none';
+    });
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+      btn.classList.toggle('active', ['no-makeup', 'everyday', 'glam'][i] === tab);
+    });
+  }
+
+  // PRODUCT FILTER
+  function filterProducts(cat, btn) {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+    });
+  }
+
+  // SKIN TONE
+  function switchTone(tone) {
+    document.querySelectorAll('.tone-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tone-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tone-' + tone).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // QUIZ
+  const questions = [
+    {
+      q: 'What does your morning look like?',
+      opts: [['⏰', '5 minutes max'], ['☕', '15–20 minutes'], ['🌅', '30–45 minutes'], ['✨', 'As long as it takes']]
+    },
+    {
+      q: 'What\'s your biggest skin concern?',
+      opts: [['💧', 'Dryness & dullness'], ['✨', 'I want to glow'], ['🎭', 'Hiding imperfections'], ['🌿', 'Keeping it minimal']]
+    },
+    {
+      q: 'Your ideal night out look is...',
+      opts: [['🌸', 'Soft & romantic'], ['🔥', 'Bold & dramatic'], ['💫', 'Glowy & editorial'], ['🤍', 'Clean & polished']]
+    },
+    {
+      q: 'How do you feel about colour?',
+      opts: [['🤍', 'Neutrals only please'], ['🌸', 'A pop of pink is fun'], ['🎨', 'The bolder the better'], ['🌈', 'I love experimenting']]
+    }
+  ];
+
+  let currentQ = 0;
+  let answers = [];
+
+  function selectOpt(el, val) {
+    document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[currentQ] = val;
+    document.getElementById('nextBtn').style.display = 'block';
+  }
+
+  function nextQ() {
+    if (currentQ < questions.length - 1) {
+      document.getElementById('dot' + currentQ).classList.remove('active');
+      document.getElementById('dot' + currentQ).classList.add('done');
+      currentQ++;
+      document.getElementById('dot' + currentQ).classList.add('active');
+      loadQ();
+    } else {
+      showResult();
+    }
+  }
+
+  function loadQ() {
+    const q = questions[currentQ];
+    document.getElementById('quizQ').textContent = q.q;
+    document.getElementById('quizOpts').innerHTML = q.opts.map((o, i) =>
+      `<div class="quiz-opt" onclick="selectOpt(this,${i})"><span class="quiz-opt-icon">${o[0]}</span>${o[1]}</div>`
+    ).join('');
+    document.getElementById('nextBtn').style.display = 'none';
+  }
+
+  function showResult() {
+    document.getElementById('quizForm').style.display = 'none';
+    const result = document.getElementById('quizResult');
+    result.classList.add('show');
+
+    const sum = answers.reduce((a, b) => a + b, 0);
+    const types = [
+      { name: 'The Effortless Girl', desc: 'You believe in enhancing, not hiding. Your ideal look is dewy, natural, and done in minutes — but always intentional. Tinted moisturizer, cream blush, and a tinted lip balm are your holy trinity.', items: ['Tinted Moisturizer', 'Cream Blush', 'Brow Gel', 'Lash Serum', 'Lip Butter Balm'] },
+      { name: 'The Radiant Romantic', desc: 'You love a soft, feminine look with a healthy glow. You care about skincare as much as makeup. A dewy foundation, rose-toned blush, and glossy lip are your signatures.', items: ['Dewy Foundation', 'Rose Blush', 'Mascara', 'Highlighter', 'Lip Gloss'] },
+      { name: 'The Bold Artist', desc: 'Makeup is your creative outlet. You treat your face like a canvas and you love when heads turn. A full face, striking liner, and an unexpected lip colour are your weapons.', items: ['Full Coverage Foundation', 'Graphic Liner', 'Bold Lip', 'Dramatic Lashes', 'Contour Kit'] },
+      { name: 'The Classic Sophisticate', desc: 'You believe in timeless beauty. Your look is polished, never overdone, and always appropriate for any setting. Skin prep, a great concealer, and a classic red lip define you.', items: ['Flawless Concealer', 'Setting Powder', 'Classic Red Lip', 'Sculpted Brows', 'Champagne Highlight'] },
+    ];
+    const idx = Math.min(Math.floor(sum / 3), 3);
+    const r = types[idx];
+    document.getElementById('resultType').textContent = r.name;
+    document.getElementById('resultDesc').textContent = r.desc;
+    document.getElementById('resultItems').innerHTML = r.items.map(i =>
+      `<span class="product-tag">${i}</span>`).join('');
+  }
+
+  function resetQuiz() {
+    currentQ = 0;
+    answers = [];
+    document.getElementById('quizForm').style.display = 'block';
+    document.getElementById('quizResult').classList.remove('show');
+    document.querySelectorAll('.quiz-dot').forEach((d, i) => {
+      d.classList.remove('active', 'done');
+      if (i === 0) d.classList.add('active');
+    });
+    loadQ();
+  }
+
+  // NAV scroll behavior
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 30 
+      ? '0 4px 30px rgba(181, 99, 122, 0.08)' 
+      : 'none';
+  });
+</script>
+</body>
+</html>
